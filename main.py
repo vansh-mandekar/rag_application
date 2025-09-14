@@ -1,6 +1,6 @@
 import os
 import numpy as np
-import pinecone
+from pinecone import Pinecone  # import the class with a capital P
 from utils import chunk_text, generate_embedding
 
 # Load Pinecone API key and environment
@@ -8,9 +8,9 @@ PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 PINECONE_ENVIRONMENT = os.environ.get("PINECONE_ENVIRONMENT")  # optional
 
 # Initialize Pinecone
-pinecone.init(api_key=PINECONE_API_KEY, environment=PINECONE_ENVIRONMENT)
+pc = Pinecone(api_key=PINECONE_API_KEY)
 index_name = "predusk"
-index = pinecone.Index(index_name)  # access existing index
+index = pc.Index(index_name)  # access existing index
 
 # Function to index story text
 def index_story(story_text):
