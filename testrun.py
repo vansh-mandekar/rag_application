@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from pinecone import Pinecone
+import Pinecone
 
 # Load environment variables
 load_dotenv()
@@ -21,3 +21,4 @@ if index_name in indexes:
     print(f"Index '{index_name}' exists.")
 else:
     print(f"Index '{index_name}' does not exist.")
+
