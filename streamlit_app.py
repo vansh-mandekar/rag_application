@@ -1,10 +1,10 @@
 import streamlit as st
 from query import query_rag
-from index_story import index_story  # updated import
+from main import index_story  # updated import
 import os
 
-st.title("Hello from Render!")
-st.write("This app is live!")
+# st.title("Hello from Render!")
+# st.write("This app is live!")
 
 # Set a writable config directory for Streamlit
 os.environ["STREAMLIT_HOME"] = os.getcwd()
@@ -69,4 +69,5 @@ time.sleep(5)  # Delay so logs can be viewed easily
 # print("PINECONE_API_KEY:", PINECONE_API_KEY)
 # print("PINECONE_ENVIRONMENT:", PINECONE_ENVIRONMENT)
 # print("HF_API_KEY:", HF_API_KEY)
+
 
