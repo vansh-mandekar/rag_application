@@ -2,7 +2,7 @@ streamlit
 transformers
 torch
 sentence-transformers
-pinecone-client
+pinecone
 numpy
 pandas
 tqdm
@@ -14,3 +14,4 @@ nltk
 regex
 python-dotenv
 tiktoken
+
