@@ -2,7 +2,7 @@ import tiktoken
 from dotenv import load_dotenv
 import os
 import numpy as np
-from pinecone import Pinecone
+import Pinecone
 
 # Load environment variables
 load_dotenv()
@@ -59,3 +59,4 @@ def chunk_text(text, chunk_size=1000, overlap=120):
         chunks.append(chunk_text)
         start += chunk_size - overlap
     return chunks
+
