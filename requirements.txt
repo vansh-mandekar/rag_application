@@ -13,3 +13,4 @@ fastapi
 nltk
 regex
 python-dotenv
+tiktoken
