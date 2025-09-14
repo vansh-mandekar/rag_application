@@ -1,7 +1,7 @@
 import tiktoken
 import os
 import numpy as np
-from pinecone import Pinecone, ServerlessSpec
+import Pinecone
 from utils import chunk_text, generate_embedding
 
 # Hugging Face Spaces secrets
@@ -51,3 +51,4 @@ if __name__ == "__main__":
         index_story(story_text)
     else:
         print(f"{sample_file} not found. Use `index_story(story_text)` for custom stories.")
+
