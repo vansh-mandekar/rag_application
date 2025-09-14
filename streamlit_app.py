@@ -1,20 +1,22 @@
 import streamlit as st
 from query import query_rag
-from main import index_story  # function to index a story
+from index_story import index_story  # updated import
 import os
 
 # Set a writable config directory for Streamlit
 os.environ["STREAMLIT_HOME"] = os.getcwd()
 os.environ["STREAMLIT_CONFIG_DIR"] = os.getcwd()
 
-
-# Hugging Face Spaces secrets
+# Load environment variables
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 PINECONE_ENVIRONMENT = os.environ.get("PINECONE_ENVIRONMENT")
 HF_API_KEY = os.environ.get("HF_API_KEY")
 
-st.set_page_config(page_title="Predusk RAG App", layout="wide")
+# Initialize Pinecone (optional here if already initialized in utils/index_story)
+import pinecone
+pinecone.init(api_key=PINECONE_API_KEY, environment=PINECONE_ENVIRONMENT)
 
+st.set_page_config(page_title="Predusk RAG App", layout="wide")
 st.title("📖 Predusk RAG App")
 
 # Sidebar for configuration
