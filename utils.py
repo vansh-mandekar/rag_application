@@ -1,20 +1,22 @@
 import os
 import numpy as np
-import pinecone
+from dotenv import load_dotenv
+from pinecone import Pinecone  # correct import
 from transformers import AutoTokenizer, AutoModel
 import torch
 
 # Load environment variables
-from dotenv import load_dotenv
 load_dotenv()
 
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT")
 
 # Initialize Pinecone
-pinecone.init(api_key=PINECONE_API_KEY, environment=PINECONE_ENVIRONMENT)
+pc = Pinecone(api_key=PINECONE_API_KEY)
+
+# Access the existing index
 index_name = "predusk"
-index = pinecone.Index(index_name)  # access existing index
+index = pc.Index(index_name)
 
 # Load model for embeddings
 tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
