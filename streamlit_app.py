@@ -3,6 +3,9 @@ from query import query_rag
 from index_story import index_story  # updated import
 import os
 
+st.title("Hello from Render!")
+st.write("This app is live!")
+
 # Set a writable config directory for Streamlit
 os.environ["STREAMLIT_HOME"] = os.getcwd()
 os.environ["STREAMLIT_CONFIG_DIR"] = os.getcwd()
@@ -62,7 +65,8 @@ if user_query and story_text.strip() != "":
 import time
 time.sleep(5)  # Delay so logs can be viewed easily
 
-print("Checking environment variables:")
-print("PINECONE_API_KEY:", PINECONE_API_KEY)
-print("PINECONE_ENVIRONMENT:", PINECONE_ENVIRONMENT)
-print("HF_API_KEY:", HF_API_KEY)
+# print("Checking environment variables:")
+# print("PINECONE_API_KEY:", PINECONE_API_KEY)
+# print("PINECONE_ENVIRONMENT:", PINECONE_ENVIRONMENT)
+# print("HF_API_KEY:", HF_API_KEY)
+
