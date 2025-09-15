@@ -6,6 +6,9 @@ Frontend	Streamlit
 Hosting	        Streamlit  cloud (Free)
 Utilities	Numpy, Pandas, Tiktoken, Regex
 
+-->architecture diagram
+<img width="1683" height="662" alt="Screenshot 2025-09-15 133603" src="https://github.com/user-attachments/assets/5e9c0bb4-622d-425c-a8bd-e4ed46ed9d6f" />
+
 
 -->what each code file does:
 
